@@ -1,0 +1,13 @@
+# action.yml
+name: 'Build RN fastlane android'
+description: 'Buidling a RN app with fastlane for android'
+inputs:
+  command:  # id of input
+    description: 'The command to run on entry'
+    required: true
+    default: 'echo "No command found"'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
