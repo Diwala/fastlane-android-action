@@ -10,4 +10,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.command }}
+    - ${{ inputs.setup }}
+    - ${{ inputs.fastlane }}
+    - ${{ inputs.githubapiToken }}
