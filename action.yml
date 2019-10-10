@@ -2,10 +2,16 @@
 name: 'Build RN fastlane android'
 description: 'Buidling a RN app with fastlane for android'
 inputs:
-  command:  # id of input
-    description: 'The command to run on entry'
+  setup:  # id of input
+    description: 'The command to setup the project'
     required: true
-    default: 'echo "No command found"'
+    default: 'echo "No setup command found"'
+  fastlane:  # id of input
+    description: 'The command to run for your fastlane project'
+    required: true
+    default: 'echo "No fastlane command found"'    
+  githubapiToken:  # id of input
+    description: 'The github api token needed for the fastlane command'
 runs:
   using: 'docker'
   image: 'Dockerfile'
