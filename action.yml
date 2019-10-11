@@ -2,20 +2,27 @@
 name: 'Build RN fastlane android'
 description: 'Buidling a RN app with fastlane for android'
 inputs:
-  setup:  # id of input
+  setup:
     description: 'The command to setup the project'
     required: true
     default: 'echo "No setup command found"'
-  fastlane:  # id of input
+  navigateToFastlane: 
+    description: 'The command to navigate to where the fastlane command shall run'
+    required: true
+    default: 'echo "No navigateToFastlane command found"'
+  fastlane:
     description: 'The command to run for your fastlane project'
     required: true
     default: 'echo "No fastlane command found"'    
-  githubapiToken:  # id of input
+  githubapiToken:
     description: 'The github api token needed for the fastlane command'
+    required: true
+    default: 'echo "No fastlane command found"'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.setup }}
+    - ${{ inputs.navigateToFastlane }}
     - ${{ inputs.fastlane }}
     - ${{ inputs.githubapiToken }}
