@@ -1,5 +1,9 @@
 #!/bin/sh
 set -eu
+echo "### VERSIONS ###"
+node -v
+yarn -v
+echo "### VERSIONS ###"
 sh -c "$1"
 cd $2
 pwd
