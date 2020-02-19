@@ -1,4 +1,4 @@
-FROM circleci/android:api-29-node
+FROM diwala/builder-images:android29-node10.6-circleci-inspo
 
 WORKDIR /files/
 USER root
