@@ -22,7 +22,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.setup }}
     - ${{ inputs.navigateToFastlane }}
     - ${{ inputs.fastlane }}
     - ${{ inputs.githubapiToken }}
