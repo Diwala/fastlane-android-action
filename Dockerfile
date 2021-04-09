@@ -3,6 +3,8 @@ FROM diwala/builder-images:android29-node10.6-circleci-inspo
 WORKDIR /files/
 USER root
 
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
 RUN gem install fastlane -NV
 RUN apt update
 RUN apt install imagemagick
